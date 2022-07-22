@@ -6,7 +6,12 @@ function sendMoney(){
 
    if (enterAmount > 60000) {
       alert("Insufficient Balance.")
-   } else {
+   } 
+    else if(enterAmount<0) {
+       alert("Transaction Failed ")
+    }
+   
+   else {
       var findUserBankAccount = enterName + "BankBalance";
       var finalAmount = parseInt(document.getElementById(findUserBankAccount).innerHTML) + enterAmount;
       var myAccountBalance = parseInt(document.getElementById("myAccountBalance").innerText) - enterAmount
